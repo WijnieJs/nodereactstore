@@ -1,0 +1,126 @@
+.card_list_grid {
+  display: grid;
+  grid-template-columns: 41vw 41vw;
+  background: linear-gradient(to left, $cyan, $green 60%, $cyan 75%);
+  opacity: 30%;
+  grid-auto-rows: 44vh;
+  justify-content: space-evenly;
+  gap: 35px 0px;
+  padding-bottom: 120px;
+  padding-top: 90px;
+  z-index: -1;
+}
+.card_list_item {
+  width: 100%;
+  height: 100%;
+}
+
+.card_p_image {
+  width: 100%;
+  background-color: saddlebrown;
+  height: 58%;
+}
+.card_p_actions {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: space-evenly;
+  color: $gray-300;
+}
+.product_container {
+  text-align: center;
+  background-image: linear-gradient(45deg, $teal, $cyan);
+}
+.product_swiper_wrapper {
+  width: 100%;
+  height: 6 5vh;
+  background-color: orange;
+}
+.product_text {
+  color: $gray-500;
+}
+.product_des {
+  color: white;
+  font-family: $fontspecial;
+  letter-spacing: 1.5;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.productSlideItem {
+  background-color: rebeccapurple;
+  height: 100%;
+  width: 100%;
+}
+
+.productSlideWrapper {
+  background-color: green;
+
+  height: 65vh;
+}
+.product_p {
+  color: $gray-400;
+}
+.checkedItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 15px;
+
+  width: 219px;
+}
+
+.checkboxitem {
+  align-self: flex-end;
+}
+label[for="type"] {
+  color: $cyan;
+  font-weight: bold;
+  font-family: $fontspecial;
+  letter-spacing: 1.2px;
+  margin-right: 25px;
+}
+.checkedTitle {
+  color: $mblue;
+}
+.card_name {
+  color: $gray-700;
+  height: 33px;
+  font-size: 14px;
+}
+
+.card_brand {
+  color: $gray-500;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+.filter_btn_div {
+}
+
+.filter_btn {
+  background-color: $pink;
+  color: $gray-900;
+  border: 0px;
+  text-transform: uppercase;
+  font-size: 12px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 171px;
+  left: 0;
+  z-index: 9;
+  color: $yellow;
+  font-weight: bold;
+  font-family: $fontspecial;
+  letter-spacing: 1.3px;
+}
+.raiser {
+  background: #fbc766;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-bottom: 6px;
+}

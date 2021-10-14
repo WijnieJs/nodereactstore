@@ -1,0 +1,28 @@
+.mobile-toggle {
+  background: transparent;
+  border: none;
+  display: flex;
+  width: 2.1rem;
+  height: 80%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 1rem;
+}
+
+.mobile-toggle__bar {
+  width: 2.5rem;
+  height: 4px;
+  background: $orange;
+}
+.mobile-toggle__bar.one {
+  width: 2.5rem;
+  height: 4px;
+}
+
+@include media6 {
+  .mobile-toggle {
+    display: none;
+  }
+}

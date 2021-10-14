@@ -1,0 +1,96 @@
+@import "./shared/colors";
+@import "./shared/mixins";
+
+@import "./button";
+@import "./backdrop";
+@import "./input";
+@import "./loader";
+@import "./avatar";
+@import "mobile-toggle.scss";
+@import "mobile-nav.scss";
+@import "./toolbar";
+@import "./modal";
+@import "./layout";
+@import "./logo";
+@import "./main-nav";
+@import "./navigation-items";
+@import "./swipermouse.scss";
+@import "./trending.scss";
+@import "./backslide.scss";
+
+@import "./image.scss";
+@import "./mainbacks.scss";
+@import "./products.scss";
+@import "./accordion.scss";
+@import "./imagemodal.scss";
+@import "./_paginator.scss";
+@import "./spinner.scss";
+
+.App {
+  font-size: 33px;
+}
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 4px;
+  font-family: $fontspecial;
+}
+body {
+  margin: 0px 0px 0px 0px;
+}
+html {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.op-btn {
+  width: 140px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: $gray-800;
+  color: $green;
+  border: none;
+  outline: none;
+  height: 40px;
+  margin-left: calc(50% - 70px);
+  z-index: 5;
+  cursor: pointer;
+  position: fixed;
+  bottom: 9vh;
+  @include animation-detail(0.5s);
+}
+
+@include media6 {
+  .op-btn {
+    height: 50px;
+    margin-left: calc(50% - 470px);
+    width: 140px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: $gray-800;
+    color: $green;
+    border: none;
+    outline: none;
+
+    position: fixed;
+    bottom: 21vh;
+  }
+}
+// PAGES
+
+// @media (prefers-reduced-motion: no-preference) {
+//   .r-logo {
+//     animation: r-logo-spin infinite 20s linear;
+//   }
+// }
+
+// @keyframes r-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }

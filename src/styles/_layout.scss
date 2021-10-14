@@ -1,0 +1,17 @@
+.main-header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 22;
+}
+
+.content {
+  margin-top: 0rem;
+}
+
+@include media6 {
+  .content {
+    margin-top: 0rem;
+  }
+}
