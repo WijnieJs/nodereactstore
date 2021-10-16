@@ -1,5 +1,6 @@
 @import "./shared/colors";
 @import "./shared/mixins";
+@import "./pages/specials";
 
 @import "./button";
 @import "./backdrop";
@@ -26,6 +27,7 @@
 @import "./_paginator.scss";
 @import "./spinner.scss";
 
+* {box-sizing: border-box;}
 .App {
   font-size: 33px;
 }
