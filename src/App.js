@@ -63,7 +63,7 @@ class App extends Component {
   errorHandler = () => {
     this.setState({ error: null });
   };
-
+  // REFACTOR
   render() {
     let routes = (
       <Switch>
