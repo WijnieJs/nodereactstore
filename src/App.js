@@ -22,7 +22,7 @@ class App extends Component {
   state = {
     showBackdrop: false,
     showMobileNav: false,
-    isAuth: true,
+    isAuth: false,
     token: null,
     userId: null,
     authLoading: false,
@@ -59,7 +59,9 @@ class App extends Component {
       this.logoutHandler();
     }, milliseconds);
   };
-
+  handleLogindemo = () => {
+    this.setState({ isAuth: true });
+  };
   errorHandler = () => {
     this.setState({ error: null });
   };
@@ -140,6 +142,7 @@ class App extends Component {
                 onOpenMobileNav={this.mobileNavHandler.bind(this, true)}
                 onLogout={this.logoutHandler}
                 isAuth={this.state.isAuth}
+                login={this.handleLogindemo}
               />
             </Toolbar>
           }
@@ -150,6 +153,7 @@ class App extends Component {
               onChooseItem={this.mobileNavHandler.bind(this, false)}
               onLogout={this.logoutHandler}
               isAuth={this.state.isAuth}
+              login={this.handleLogindemo}
             />
           }
         />

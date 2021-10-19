@@ -15,7 +15,7 @@ class Product extends Component {
   };
   componentDidMount() {
     console.log(this.props);
-    this.props.getAuth()
+    // this.props.loadUser();
   }
   expandImagesHandler = () => {
     this.setState({ expandImages: !this.state.expandImages });
@@ -76,7 +76,7 @@ class Product extends Component {
                 <Accordion title="Product info" desc={product.beschrijving} />
                 <Accordion title="Design and materials" desc={product.type} />
 
-                {/* <div style={{height: '29px'}}/>  */}
+                <div style={{ height: "29px" }} />
               </div>
             </Fragment>
           )}
@@ -95,9 +95,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
- 
-        getAuth:  () => dispatch(actions.auth())
-
+    // loadUser: () => dispatch(actions.login()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Product);

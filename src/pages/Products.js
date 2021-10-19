@@ -7,7 +7,8 @@ import FilterEdit from "../components/FilterEdit/FilterEdit";
 import Paginator from "../components/Paginator/Paginator";
 import Spinner from "../components/Spinner/Spinner";
 
-const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IncyZnNAZ21haWwuY29tIiwidXNlcklkIjoiNjA0NTAxNDY4MzdjYWQ1ODJjMjYzYzQ5IiwiaWF0IjoxNjE2MzUzMjI5LCJleHAiOjE2MTYzNjA0Mjl9.PWhp-wDNfs7cHWnWyHzYws_hE7TqWvt8xhiqNEvd_0g"
+const TOKEN =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IncyZnNAZ21haWwuY29tIiwidXNlcklkIjoiNjA0NTAxNDY4MzdjYWQ1ODJjMjYzYzQ5IiwiaWF0IjoxNjE2MzUzMjI5LCJleHAiOjE2MTYzNjA0Mjl9.PWhp-wDNfs7cHWnWyHzYws_hE7TqWvt8xhiqNEvd_0g";
 class Products extends Component {
   state = {
     openFilterModal: false,
@@ -17,15 +18,14 @@ class Products extends Component {
     },
     postPage: 1,
     postLoading: false,
-   
   };
 
   async componentDidMount() {
     await this.props.getBrands();
     await this.props.getColors();
-    await this.props.loadUser()
-     this.loadProducts();
-  
+    await this.props.loadUser();
+    this.loadProducts();
+
     // await this.props.getProductsInShop(this.state.filters, this.state.postPage);
   }
   getProductDetail = () => {
@@ -63,16 +63,15 @@ class Products extends Component {
     this.setState({ openFilterModal: false, filters: result });
   };
   goToDetail = (prod) => {
-    console.log(prod)
-    this.props.setProductDetail(prod)
+    console.log(prod);
+    this.props.setProductDetail(prod);
     this.props.history.push("/product");
-  }
+  };
   render() {
-    let content = <Spinner/>
+    let content = <Spinner />;
     if (!this.props.loading) {
-
       content = (
-   <Paginator
+        <Paginator
           onPrevious={this.loadProducts.bind(this, "previous")}
           onNext={this.loadProducts.bind(this, "next")}
           lastPage={Math.ceil(this.props.totalItems / 4)}
@@ -84,7 +83,6 @@ class Products extends Component {
 
           {!this.props.loading && (
             <div className="card_list_grid fadein">
-        
               {this.props.products.map((product) => (
                 <div
                   key={product._id}
@@ -97,7 +95,7 @@ class Products extends Component {
             </div>
           )}
         </Paginator>
-      )
+      );
     }
     return (
       <Fragment>
@@ -107,8 +105,8 @@ class Products extends Component {
           onAcceptHandler={this.onAcceptHandler}
           triggerNewProducts={this.getNewProducts}
         />
-     
-          {content}
+
+        {content}
       </Fragment>
     );
   }
@@ -124,15 +122,13 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getProductsInShop: (result, page) =>
       dispatch(actions.getProductsInit(result, page)),
-    setProductDetail: (id) =>
-      dispatch(actions.getProductDetailInit(id)),
-      
+    setProductDetail: (id) => dispatch(actions.getProductDetailInit(id)),
+
     getColors: (result) => dispatch(actions.getColorsToShop(result)),
 
     getBrands: (result) => dispatch(actions.getBrandsToShop(result)),
-    loadUser:  () => dispatch(actions.login()),
-        getAuth:  () => dispatch(actions.auth())
-
+    loadUser: () => dispatch(actions.login()),
+    getAuth: () => dispatch(actions.auth()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
